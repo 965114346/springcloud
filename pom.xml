@@ -7,7 +7,11 @@
     <artifactId>springcloud</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>cloud-config</module>
+        <module>eurekaserver</module>
+        <module>service-hi</module>
+        <module>service-ribbon</module>
+        <module>service-feign</module>
+        <module>service-zuul</module>
     </modules>
     <packaging>pom</packaging>
 
