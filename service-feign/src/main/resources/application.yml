@@ -19,3 +19,5 @@ http:
   connectionRequestTimeout: 500
   socketTimeout: 10000
   staleConnectionCheckEnabled: true
+#微信登录api
+wxLoginApi: https://api.weixin.qq.com/sns/jscode2session

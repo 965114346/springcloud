@@ -2,6 +2,7 @@ package com.zyy.servicefeign.controller;
 
 import com.zyy.servicefeign.service.SchedualServiceHi;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +15,8 @@ public class HiController extends BaseController {
     @Autowired
     private SchedualServiceHi schedualServiceHi;
 
-    private static String wxLoginApi = "https://api.weixin.qq.com/sns/jscode2session";
+    @Value("${wxLoginApi}")
+    private static String wxLoginApi;
 
     @GetMapping("/hi")
     public String sayHi(String name){
