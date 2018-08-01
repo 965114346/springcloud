@@ -10,6 +10,8 @@ import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -26,6 +28,8 @@ public class HttpAPIService {
 
     @Autowired
     private RequestConfig config;
+
+    private static final Logger logger = LoggerFactory.getLogger(HttpAPIService.class);
 
 
     /**
@@ -70,8 +74,15 @@ public class HttpAPIService {
             }
         }
 
+        logger.info("URL ==> {}", uriBuilder.getPath());
+        logger.info("Parameter ==> {}", uriBuilder.getQueryParams());
+
         // 调用不带参数的get请求
-        return this.doGet(uriBuilder.build().toString());
+        String result = this.doGet(uriBuilder.build().toString());
+
+        logger.info("result <== {}", result);
+
+        return result;
 
     }
 

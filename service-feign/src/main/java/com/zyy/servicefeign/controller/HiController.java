@@ -15,8 +15,8 @@ public class HiController extends BaseController {
     @Autowired
     private SchedualServiceHi schedualServiceHi;
 
-    @Value("${wxLoginApi}")
-    private static String wxLoginApi;
+    @Value("${wx.LoginApi}")
+    private String wxLoginApi;
 
     @GetMapping("/hi")
     public String sayHi(String name){
