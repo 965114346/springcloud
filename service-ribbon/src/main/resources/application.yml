@@ -2,8 +2,19 @@ server:
   port: 8764
 spring:
   application:
-    name: service-ribbon
+    name: order
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 232511
+    url: jdbc:mysql://127.0.0.1:3306/springcloud_sell?characterEncoding=utf-8&useUnicode=true&useSSL=false
+  jpa:
+    show-sql: true
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/
+logging:
+  level:
+    root: info
+    com.zyy.serviceribbon: debug
