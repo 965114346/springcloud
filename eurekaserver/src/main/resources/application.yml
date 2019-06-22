@@ -2,14 +2,14 @@ server:
   port: 8761
 eureka:
   instance:
-    hostname: peer1
+    hostname: 127.0.0.1
   client:
     serviceUrl:
-      defaultZone: http://peer2:8762/eureka/
-    fetch-registry: true #获取eureka注册信息
-    register-with-eureka: true #注册到eureka
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    fetch-registry: false #获取eureka注册信息
+    register-with-eureka: false #注册到eureka
   server:
     enable-self-preservation: false
 spring:
   application:
-    name: eureka-server1
+    name: eureka-server

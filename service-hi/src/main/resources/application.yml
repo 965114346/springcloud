@@ -1,16 +1,11 @@
 server:
-  port: 8765
+  port: 8763
 spring:
   application:
-    name: product
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    username: root
-    password: 232511
-    url: jdbc:mysql://127.0.0.1:3306/springcloud_sell?characterEncoding=utf-8&useUnicode=true&useSSL=false
-  jpa:
-    show-sql: true
+    name: service-hi
 eureka:
   client:
     service-url:
-      defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/
+      defaultZone: http://127.0.0.1:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
