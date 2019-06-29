@@ -9,6 +9,8 @@ eureka:
 spring:
   application:
     name: service-feign
+  zipkin:
+    base-url: http://111.230.48.104:9411
 feign:
   hystrix:
     enabled: true

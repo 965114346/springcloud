@@ -3,6 +3,8 @@ server:
 spring:
   application:
     name: service-ribbon
+  zipkin:
+    base-url: http://111.230.48.104:9411
 eureka:
   client:
     service-url:
